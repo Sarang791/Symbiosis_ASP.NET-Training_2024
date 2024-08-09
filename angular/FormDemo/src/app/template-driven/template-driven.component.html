@@ -1,0 +1,58 @@
+<p>template-driven works!</p>
+<p>ngform  directive is used to create template-driven form</p>
+<p>#contact form= "ngForm" add this in form tag <br> then add ngmodel directive to every input type</p>
+<form #contactForm ="ngForm" (ngSubmit) ="onSubmit(contactForm)">
+    <p>
+        <label for="firstname" >First Name : </label>
+        <input type="text" name="firstname" id="firstname" ngModel>
+    </p>
+    <p>
+        <label for="lastname" >Last Name : </label>
+        <input type="text" name="lastname" id="lastname" ngModel>
+    </p>
+    <p>
+        <label for="email" >Email : </label>
+        <input type="text" name="email" id="email" ngModel>
+    </p>
+    <p>
+        <label for="gender" >Gender</label>
+        <input type="radio" name="gender" id="gender" value="Male" ngModel> Male
+        <input type="radio" name="gender" id="gender" value="Female" ngModel> Female
+    </p>
+    <p>
+        <label for="isMarried">Married : </label>
+        <input type="checkbox" id="isMarried" name="isMarried" ngModel>
+    </p>
+    <p>
+        <label for="country">country : </label>
+        <select name="country" id="country" ngModel>
+            <option [ngValue]="c.id" *ngFor = "let c of countrylist">
+                {{c.name}}
+            </option>
+        </select>
+    </p>
+
+    <div ngModelGroup="Address">
+        <p>
+            <label for="city">City : </label>
+            <input type="text" name="city" id="city" ngModel>
+        </p>
+        <p>
+            <label for="street">Street : </label>
+            <input type="text" name="street" id="street" ngModel>
+        </p>
+        <p>
+            <label for="pincode">Pincode : </label>
+            <input type="text" name="pincode" id="pincode" ngModel>
+        </p>
+    </div>
+    <button type="submit">Submit</button>
+    <div>
+        Name : {{Name}}<br>
+        Email : {{Email}}<br>
+        Gender : {{Gender}}<br>
+        Marrital Status : {{Marrital_Status}}<br>
+        Country : {{Country}}<br>
+        Address : {{address}}<br>
+    </div>
+</form>

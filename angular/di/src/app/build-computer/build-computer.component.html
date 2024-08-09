@@ -1,0 +1,7 @@
+<p>build-computer works!</p>
+<p>Enter the your Computer's Specifications : </p>
+NO. of CPU's : <input type="text" id="cpu" [(ngModel)]="cpus">
+NO. of Keyboars : <input type="text" id="keyboard" [(ngModel)]="keyboards">
+No. of Monitors : <input type="text" id="monitors" [(ngModel)]="monitors">
+<button (click)="makeComputer()">Submit</button>
+<label id="txt">{{this.computer.giveData()}}</label>

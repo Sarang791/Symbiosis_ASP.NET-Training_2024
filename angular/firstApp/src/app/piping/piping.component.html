@@ -1,0 +1,18 @@
+<p>piping works!</p>
+<div>
+    <h3>
+        Date :{{today}}<br>
+        Date Pipe : {{today | date}}<br>
+        Date Pipe : {{today | date : 'short'}}<br>
+        Name : {{Name | uppercase}}<br>
+        Name : {{Name | slice : 5}}<br>
+        SquareRoot : {{num | squareroot }}<br>
+        Reverse : {{Name | reverse}}<br>
+
+    </h3>
+    Enter Cube Number : <input type="text" name="cube" id="" [(ngModel)]="croot"> 
+    <p>Cube is : {{croot | cubeRoot}}</p>
+
+    Enter String : <input type="text" name="cube" id="" [(ngModel)]="pdrome"> 
+    <p>Is palindrome: {{pdrome | palindrome}}</p>
+</div>

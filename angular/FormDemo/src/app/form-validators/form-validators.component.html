@@ -1,0 +1,46 @@
+<p>form-validators works!</p>
+<form #contactForm ="ngForm" (ngSubmit) ="onSubmit(contactForm)">
+    <p>
+        <label for="firstname" >First Name : </label>
+        <input type="text" name="firstname" id="firstname" required #firstname = "ngModel" ngModel>
+        
+    </p>
+    <div *ngIf="firstname.invalid && (firstname.dirty||firstname.touched)" class="alert alert-danger">
+        <div *ngIf="firstname.errors?.['required']">
+            Name is required;
+        </div>
+    </div>
+    
+    <p>
+        <label for="lastname" >Last Name : </label>
+        <input type="text" name="lastname" id="lastname"required #lastname = "ngModel" ngModel>
+    </p>
+    <div *ngIf="lastname.invalid && (lastname.dirty||lastname.touched)" class="alert alert-danger">
+        <div *ngIf="lastname.errors?.['required']">
+            Name is required;
+        </div>
+    </div>
+    <p>
+        <label for="email" >Email : </label>
+        <input type="text" name="email" id="email" class="form-control" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\[a-zA-Z]{2,}" [ngModel]="foremail" #email ="ngModel">
+
+    </p>
+    <div *ngIf="email.invalid && (email.dirty||email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors?.['required']">
+            Email is required;
+        </div>
+        <div *ngif="email.erros?.['pattern']">
+            Invalid email format
+        </div>
+    </div>
+    
+    <button type="submit">Submit</button>
+    <div>
+        Name : {{Name}}<br>
+        Email : {{Email}}<br>
+        Gender : {{Gender}}<br>
+        Marrital Status : {{Marrital_Status}}<br>
+        Country : {{Country}}<br>
+        Address : {{address}}<br>
+    </div>
+</form>

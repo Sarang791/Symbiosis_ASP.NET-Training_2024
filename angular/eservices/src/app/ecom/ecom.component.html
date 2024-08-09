@@ -1,0 +1,7 @@
+<p>ecom works!</p>
+<p *ngFor="let e of employees;">
+    <span *ngIf="e.id%2==0;else oddNum"[class.even]=true>{{e.id}}  {{e.name}} {{e.salary}}</span>
+    <ng-template #oddNum >
+        <span [class.odd]="true">{{e.id}}  {{e.name}} {{e.salary}}</span>
+    </ng-template>
+</p>
